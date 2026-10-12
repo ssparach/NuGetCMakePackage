@@ -76,8 +76,8 @@ jobs:
         if: ${{ matrix.publishPackages && contains(fromJSON('["refs/heads/main"]'), github.ref) }}
         shell: pwsh
         run: |
-          & dotnet nuget add source --name github "https://nuget.pkg.github.com/mschofie/index.json"
-          Get-ChildItem -Path __artifacts/package/release/MSchofie.*.nupkg |
+          & dotnet nuget add source --name github "https://nuget.pkg.github.com/microsoft/index.json"
+          Get-ChildItem -Path __artifacts/package/release/Microsoft.NuNuGet*.nupkg |
             ForEach-Object {
               & dotnet nuget push $_.FullName --api-key ${{ secrets.PACKAGE_PUBLISH_PAT }} --source "github"
             }
@@ -162,7 +162,7 @@ jobs:
           )
           gh release create @Arguments
 
-          $files = Get-ChildItem -Path '__artifacts/package/release/MSchofie.*.nupkg' -ErrorAction SilentlyContinue
+          $files = Get-ChildItem -Path '__artifacts/package/release/Microsoft.NuNuGet*.nupkg' -ErrorAction SilentlyContinue
           if (-not $files) { Write-Host "No .nupkg files found to upload"; exit 0 }
           foreach ($file in $files) {
             Write-Host "Uploading $($file.Name)"

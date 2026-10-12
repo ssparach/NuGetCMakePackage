@@ -99,10 +99,10 @@ function(ensure_nunuget)
         message(FATAL_ERROR "ensure_nunuget: Unsupported system processor '${CMAKE_HOST_SYSTEM_PROCESSOR}'")
     endif()
 
-    set(PACKAGE_NAME "MSchofie.NuNuGet.${PACKAGE_SYSTEM}-${PACKAGE_ARCH}")
+    set(PACKAGE_NAME "Microsoft.NuNuGet.${PACKAGE_SYSTEM}-${PACKAGE_ARCH}")
     set(PACKAGE_VERSION "0.1.86-beta")
 
-    set(PACKAGE_URL "https://github.com/mschofie/NuNuGet/releases/download/v${PACKAGE_VERSION}/${PACKAGE_NAME}.${PACKAGE_VERSION}.nupkg")
+    set(PACKAGE_URL "https://github.com/microsoft/NuGetCMakePackage/releases/download/nunuget-v${PACKAGE_VERSION}/${PACKAGE_NAME}.${PACKAGE_VERSION}.nupkg")
     set(PACKAGE_PATH "${NUGET_TOOLS_PATH}/${PACKAGE_NAME}.${PACKAGE_VERSION}.nupkg")
 
     file(DOWNLOAD "${PACKAGE_URL}" "${PACKAGE_PATH}"

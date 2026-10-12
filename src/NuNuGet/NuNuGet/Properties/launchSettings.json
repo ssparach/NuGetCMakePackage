@@ -1,9 +1,7 @@
 {
   "profiles": {
     "NuNuGet": {
-      "commandName": "Project",
-      "commandLineArgs": "install --listFile B:/Samples/WindowsML/cpp-cmake/__output/windows-vs-x64[mschofie]/WinMLSamples.packages.list.json --configFile B:/Samples/WindowsML/cpp-cmake/nuget.config --lockFile B:/Samples/WindowsML/cpp-cmake/packages.lock.json",
-      "workingDirectory": "Q:\\Source\\github\\mschofie\\NuNuGet"
+      "commandName": "Project"
     },
     "NuNuGet (no params)": {
       "commandName": "Project"

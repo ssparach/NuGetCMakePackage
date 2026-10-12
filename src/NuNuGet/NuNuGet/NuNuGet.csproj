@@ -13,12 +13,12 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>NuNuGet</ToolCommandName>
 
-    <Authors>mschofie</Authors>
-    <Company>mschofie</Company>
+    <Authors>Microsoft</Authors>
+    <Company>Microsoft Corporation</Company>
     <Description>NuNuGet is a command-line tool for build infrastructure to retrieve NuGet packages.</Description>
     <PackageCompressionLevel>Optimal</PackageCompressionLevel>
     <PackageDescription>A command-line tool for build infrastructure to retrieve NuGet packages.</PackageDescription>
-    <PackageId>MSchofie.NuNuGet</PackageId>
+    <PackageId>Microsoft.NuNuGet</PackageId>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>NuGet;Package;Tool</PackageTags>

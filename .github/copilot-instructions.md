@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a CMake module that integrates NuGet package management into CMake builds. Consumers include it via `FetchContent` and call `add_nuget_packages()` to download NuGet packages and make them discoverable through `find_package()`. The module uses the [NuNuGet](https://github.com/mschofie/NuNuGet) tool for package resolution.
+This is a CMake module that integrates NuGet package management into CMake builds. Consumers include it via `FetchContent` and call `add_nuget_packages()` to download NuGet packages and make them discoverable through `find_package()`. The module uses the [NuNuGet](https://github.com/microsoft/NuGetCMakePackage/tree/main/src/NuNuGet) tool for package resolution.
 
 ## Building and Testing
 

@@ -10,8 +10,8 @@
   <PropertyGroup>
     <PackageId>NuNuGet.Reference</PackageId>
     <Version>0.6.0</Version>
-    <Authors>mschofie</Authors>
-    <Company>mschofie</Company>
+    <Authors>Microsoft</Authors>
+    <Company>Microsoft Corporation</Company>
     <Title>NuNuGet.Reference</Title>
     <Description>Reference NuGet for NuNuGet testing.</Description>
     <PackageDescription>A reference NuGet package for testing NuNuGet.</PackageDescription>

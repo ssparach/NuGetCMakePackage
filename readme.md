@@ -13,7 +13,7 @@ This repository is intended to be consumed through [CMake's FetchContent package
 ```cmake
 FetchContent_Declare(
     NuGetCMakePackage
-    GIT_REPOSITORY https://github.com/mschofie/NuGetCMakePackage
+    GIT_REPOSITORY https://github.com/microsoft/NuGetCMakePackage
     GIT_TAG 0123456789abcdef0123456789abcdef01234567
 )
 ```
@@ -68,4 +68,4 @@ The behavior of this package can be configured with the following CMake variable
 [cmake-find_package]: https://cmake.org/cmake/help/latest/command/find_package.html
 [fetchcontent_declare]: https://cmake.org/cmake/help/latest/module/FetchContent.html#command:fetchcontent_declare
 [fetchcontent_makeavailable]: https://cmake.org/cmake/help/latest/module/FetchContent.html#command:fetchcontent_makeavailable
-[nunuget_tooling]: https://github.com/mschofie/NuNuGet
+[nunuget_tooling]: https://github.com/microsoft/NuGetCMakePackage/tree/main/src/NuNuGet
