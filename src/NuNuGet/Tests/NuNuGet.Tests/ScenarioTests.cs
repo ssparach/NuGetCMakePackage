@@ -10,7 +10,7 @@ internal static class TestEnvironment
 {
     public static readonly string TestFolder = Path.GetDirectoryName(typeof(TestEnvironment).Assembly.Location)!;
 
-    public static readonly string RepositoryRoot = Path.GetFullPath(Git.GetRepositoryRoot(TestFolder));
+    public static readonly string RepositoryRoot = Path.GetFullPath(Build.GetRootPath());
 
     public static readonly string BuiltPackagesFolder = Path.Combine(RepositoryRoot, "__artifacts", "package", Build.GetConfiguration().ToLowerInvariant());
 
