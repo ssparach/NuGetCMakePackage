@@ -1,0 +1,27 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: nuget
+    directory: '/'
+    schedule:
+      interval: weekly
+    groups:
+      nuget:
+        patterns:
+          - "NuGet*"
+      xunit:
+        patterns:
+          - "xunit*"
+      gitversioning:
+        patterns:
+          - "Nerdbank.GitVersioning"
+          - "nbgv"
+
+  - package-ecosystem: dotnet-sdk
+    directory: '/'
+    schedule:
+      interval: weekly
