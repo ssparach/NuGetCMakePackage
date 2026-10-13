@@ -11,7 +11,7 @@ NuNuGet is a lightweight command-line tool that restores NuGet packages based on
 - **JSON-based package list** - Define packages in a simple JSON format instead of `.csproj` files
 - **Lock file support** - Generate and use lock files for reproducible builds
 - **Custom NuGet configuration** - Use a specific `nuget.config` for package sources
-- **Cross-platform** - Supports Windows (x64, ARM64), Linux (x64), and macOS (ARM64)
+- **Cross-platform** - Supports Windows (x86, x64, ARM64), Linux (x64, ARM64), and macOS (ARM64)
 - **Single-file deployment** - Can be published as a self-contained single executable
 
 ## Installation
@@ -91,6 +91,9 @@ dotnet publish .\NuNuGet.csproj /p:PublishProfile=SingleFileTrimmed
 
 # Self-contained, trimmed (Windows x64)
 dotnet publish .\NuNuGet.csproj --runtime win-x64 /p:PublishProfile=SingleFileSelfContainedTrimmed
+
+# Self-contained, trimmed (Windows x86)
+dotnet publish .\NuNuGet.csproj --runtime win-x86 /p:PublishProfile=SingleFileSelfContainedTrimmed
 
 # Self-contained, trimmed (Windows ARM64)
 dotnet publish .\NuNuGet.csproj --runtime win-arm64 /p:PublishProfile=SingleFileSelfContainedTrimmed
