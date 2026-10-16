@@ -14,10 +14,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - windows-latest
-          - ubuntu-latest
-          - macos-latest
+        include:
+          - os: windows-latest
+            rid: win-x64
+            exe: NuNuGet.exe
+          - os: ubuntu-latest
+            rid: linux-x64
+            exe: NuNuGet
+          - os: macos-latest
+            rid: osx-arm64
+            exe: NuNuGet
 
     steps:
       - name: Checkout
@@ -27,6 +33,30 @@ jobs:
           fetch-depth: 0
           filter: blob:none
           persist-credentials: false
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5
+        with:
+          global-json-file: src/NuNuGet/global.json
+
+      # Build NuNuGet from source and put it on PATH so CMake's find_program uses it
+      # instead of downloading a released package.
+      - name: Build NuNuGet (${{ matrix.rid }})
+        shell: pwsh
+        working-directory: src/NuNuGet
+        run: |
+          $out = Join-Path $env:GITHUB_WORKSPACE "__nunuget/${{ matrix.rid }}"
+          dotnet publish ./NuNuGet/NuNuGet.csproj `
+            --configuration Release `
+            --runtime ${{ matrix.rid }} `
+            /p:PublishProfile=SingleFileSelfContained `
+            --output $out
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $exe = Join-Path $out "${{ matrix.exe }}"
+          if (-not (Test-Path -LiteralPath $exe)) { throw "NuNuGet not found at $exe" }
+          & $exe --help
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Add-Content -Path $env:GITHUB_PATH -Value $out
 
       - name: Verify CMake
         shell: pwsh
